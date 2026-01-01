@@ -1,6 +1,6 @@
 import LoanForm from './components/LoanForm';
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div>
       <LoanForm />

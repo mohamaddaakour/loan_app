@@ -1,6 +1,6 @@
 import type { ModalProps } from '../types';
 
-const Modal: React.FC<ModalProps> = ({ isVisible, errorMessage, onClose }) => {
+const Modal = ({ isVisible, errorMessage, onClose }: ModalProps) => {
   if (!isVisible)
     return null;
 

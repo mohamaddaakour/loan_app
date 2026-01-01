@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Modal from './Modal';
 import type { LoanFormData, SalaryRange } from '../types';
 
+// events
 import type { ChangeEvent, FormEvent } from 'react';
 
 const SALARY_OPTIONS: SalaryRange[] = [
@@ -10,7 +11,7 @@ const SALARY_OPTIONS: SalaryRange[] = [
   'more than 1500$'
 ];
 
-const LoanForm: React.FC = () => {
+const LoanForm = () => {
   const [formData, setFormData] = useState<LoanFormData>({
     name: '',
     phoneNumber: '',
