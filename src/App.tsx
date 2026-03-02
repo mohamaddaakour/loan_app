@@ -1,11 +1,16 @@
-import LoanForm from './components/LoanForm';
+import Navbar from "./components/Navbar/Navbar"
+import LoanForm from "./components/LoanForm/LoanForm";
 
 const App = () => {
   return (
-    <div>
-      <LoanForm />
-    </div>
-  );
-};
+    <>
+      <Navbar />
+
+      <main className="p-6">
+        <LoanForm/>
+      </main>
+    </>
+  )
+}
 
 export default App;
