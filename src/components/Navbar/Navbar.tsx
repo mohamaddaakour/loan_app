@@ -1,7 +1,10 @@
-import { CgDarkMode } from "react-icons/cg";
 import type { NavbarProps } from "./Navbar.types";
 
-const Navbar = ({ title = "Loan App" }: NavbarProps) => {
+// we import an icon from react icons library
+import { CgDarkMode } from "react-icons/cg";
+
+
+export default function Navbar({ title = "Loan App" }: NavbarProps) {
   return (
     <nav className="min-h-24 bg-cyan-500 flex justify-between items-center px-6">
       <h1 className="text-2xl font-bold text-black">{title}</h1>
@@ -14,6 +17,4 @@ const Navbar = ({ title = "Loan App" }: NavbarProps) => {
       </button>
     </nav>
   );
-};
-
-export default Navbar;
+}

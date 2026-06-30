@@ -1,7 +1,11 @@
+// we imported the components we created
 import Navbar from "./components/Navbar/Navbar"
 import LoanForm from "./components/LoanForm/LoanForm";
 
-const App = () => {
+
+// the App.tsx and the component in it (App component in our case) is the entry point for
+// our application
+export default function App() {
   return (
     <>
       <Navbar />
@@ -10,7 +14,5 @@ const App = () => {
         <LoanForm/>
       </main>
     </>
-  )
+  );
 }
-
-export default App;

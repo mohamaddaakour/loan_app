@@ -1,8 +1,4 @@
-interface ModalProps {
-  message: string;
-  isOpen: boolean;
-  onClose: () => void;
-}
+import type { ModalProps } from "./Modal.types";
 
 const Modal = ({ message, isOpen, onClose }: ModalProps) => {
   if (!isOpen)
