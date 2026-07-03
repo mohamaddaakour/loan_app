@@ -43,7 +43,7 @@ npm run dev
 ## **Code Explanation**
 
 ```ts
-// in package.jsno file these are commands we can use in the terminal
+// in package.json file these are commands we can use in the terminal
 // per example to apply the first one we put this command:
 // npm run dev
 

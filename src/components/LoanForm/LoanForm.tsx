@@ -6,9 +6,6 @@ import type { LoanFormData } from "./LoanForm.types";
 import type { SubmitEvent } from "react";
 
 const LoanForm = () => {
-  // we use a state hook to handle the change of each element in this object
-  // each time anything changes in the object the whole component will be rendered
-  // formData is the state, setFormData is the function to edit the state
   const [formData, setformData] = useState<LoanFormData>({
     name: "",
     age: 0,
@@ -17,19 +14,14 @@ const LoanForm = () => {
     salary: "Less than 500$",
   });
 
-  // state hook to handle the modal
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    // in javascript this is called destructuring
-    // const name = event.target.name;
     const { name, type, value, checked } = event.target;
 
-    // prev is the last state
     setformData(prev => ({
       ...prev,
 
-      // we used [name] because the key of an object is not a string
       [name]: type === "checkbox" ? checked : value,
     }));
   };
@@ -43,9 +35,6 @@ const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
   }));
 };
 
-  // we use the memo hook to save the return of a function and not
-  // calling it every time the component re-render
-  // this function will be called agin only if the dependency array changed
   const validationMessage = useMemo(() => {
     const { name, age, phoneNumber, student } = formData;
 
@@ -75,13 +64,9 @@ const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
 
     return "The form has been submitted successfully";
 
-    // here is the dependency array
   }, [formData]);
 
   const handleSubmit = (event: SubmitEvent<HTMLFormElement>) => {
-    // we use this to prevent the default behavior of submitting a button
-    // because clicking the submit button will send all the data and remove it immediately and we
-    // don't want that
     event.preventDefault();
 
     console.log("Submitted:", formData);
@@ -180,8 +165,6 @@ const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
         message={validationMessage}
         isOpen={isModalOpen}
 
-        // when we are using an instruction we have to put it in
-        // an anonymous function
         onClose={() => setIsModalOpen(false)}
       />
     </div>
